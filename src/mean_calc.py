@@ -5,9 +5,14 @@ def calc_mean(df: pd.DataFrame, plot=True) -> pd.DataFrame:
     
     if plot:
         print(f'The mean percentege for permit is: {round(df["permit_perc"].mean(), 2)}%')
+        print("Permit percentage mean for kentucky: " + str(round(df[df["state"] == "Kentucky"]["permit_perc"].values[0],2)) + "%")
+
         plt.figure()
+        plt.ion()
         plt.plot(df["state"], df["permit_perc"])
         plt.xticks(rotation=45)
+        plt.title("mean percentege for permit by year")
+        plt.ylabel("")
         plt.show(block=True)
         print("But Kentucky is and outlier and is messing the mean")    
     
