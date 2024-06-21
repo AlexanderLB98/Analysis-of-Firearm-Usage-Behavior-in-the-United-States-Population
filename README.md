@@ -6,9 +6,9 @@ We aim to study the firearm usage behavior across the United States population. 
 
 This dataset accumulates information (by date and state) regarding background checks for individuals applying for firearm permits. Our goal is to derive insights into state differences, temporal trends, and more.
 
-- permit: Background check permits.
-- handgun: Requests for handguns.
-- long_gun: Requests for long guns.
+- **permit:** Background check permits.
+- **handgun:** Requests for handguns.
+- **long_gun:** Requests for long guns.
 
 These columns, along with month and state, are the focus of our analysis.
 
@@ -16,9 +16,9 @@ Additionally, we will incorporate population data to compute relative statistics
 
 This dataset provides 2014 population data for different states of the United States and includes the following columns:
 
-- code: Two-letter string identifying each state (e.g., CA for California, FL for Florida).
-- state: Full name of the state.
-- pop_2014: Population count in the year 2014.
+- **code:** Two-letter string identifying each state (e.g., CA for California, FL for Florida).
+- **state:** Full name of the state.
+- **pop_2014:** Population count in the year 2014.
 
 
 
