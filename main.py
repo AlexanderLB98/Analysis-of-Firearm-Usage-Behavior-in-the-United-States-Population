@@ -11,7 +11,7 @@ import os
 
 if __name__ == "__main__":
     
-    plot = False    
+    plot = True    
 
     url = os.path.join("data", "nics-firearm-background-checks.csv")
     
