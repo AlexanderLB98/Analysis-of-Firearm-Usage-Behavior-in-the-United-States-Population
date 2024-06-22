@@ -1,5 +1,14 @@
 # Analysis of Firearm Usage Behavior in the United States Population
 
+## Table of Content
+1. [Project description](#project-description)
+2. [Installation](#installation)
+   - [Clone the Repository](#clone-the-repository)
+   - [Set up Dependencies](#set-up-dependencies)
+3. [How to Use the Project](#how-to-use-the-project)
+4. [Testing](#testing)
+
+---
 ## Project description
 
 We aim to study the firearm usage behavior across the United States population. We will utilize a dataset already included in the project folder, sourced from the following [link](https://www.kaggle.com/datasets/pedropereira94/nics-firearm-background-checks)
@@ -20,10 +29,20 @@ This dataset provides 2014 population data for different states of the United St
 - **state:** Full name of the state.
 - **pop_2014:** Population count in the year 2014.
 
+## Installation
+To install the project:
+
+### Clone the repository
+First, clone the repository from GitHub to your local machine:
+
+```
+git clone https://github.com/AlexanderLB98/Analysis-of-Firearm-Usage-Behavior-in-the-United-States-Population.git
+cd your_project
+```
 
 
-## Dependencies
-Ensure you have the necessary Python packages installed:
+### Set up dependencies
+It's a good practice to use a virtual environment to avoid dependency conflicts between different projects. I recommend using `pip` and `conda` for this, but you could also use `venv`. Ensure you have the necessary Python packages installed:
 - pandas
 - matplotlib
 - [folium](https://python-graph-gallery.com/292-choropleth-map-with-folium/)

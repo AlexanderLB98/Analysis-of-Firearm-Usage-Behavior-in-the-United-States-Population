@@ -10,9 +10,9 @@ from suitcase_test_dates import run_date_tests
 
 if __name__ == '__main__':
     print("Select which suite(s) you want to execute:")
-    print("0. All")
-    print("1. Common Tests")
-    print("2. Date Tests")
+    print("0. All suite cases")
+    print("1. Common suite Tests")
+    print("2. Date suite Tests")
     
     choice = input("Select: ")
     
