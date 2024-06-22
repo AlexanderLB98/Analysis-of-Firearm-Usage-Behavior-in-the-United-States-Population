@@ -49,3 +49,11 @@ python main.py
 ```
 
 ![Figure](doc/data_by_year.png)
+
+
+## Testing
+To run the test, run the following command in the root directory
+
+```bash
+python -m unittest discover
+```

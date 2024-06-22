@@ -43,11 +43,14 @@ def breakdown_date(df: pd.DataFrame) -> pd.DataFrame:
         df = breakdown_date(df)
     """
 
-
     
     # Apply the format_date function to split the 'month' column
     df[['year', 'month']] = pd.DataFrame(df['month'].map(format_date).tolist())    
    
+    # Convert 'year' and 'month' columns to int
+    df['year'] = df['year'].astype(int)
+    df['month'] = df['month'].astype(int)
+    
     print(df.head(5))
     
     return df
