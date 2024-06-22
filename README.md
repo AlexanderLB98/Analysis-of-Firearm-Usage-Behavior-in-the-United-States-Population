@@ -48,7 +48,12 @@ It's a good practice to use a virtual environment to avoid dependency conflicts 
 - [folium](https://python-graph-gallery.com/292-choropleth-map-with-folium/)
 - selenium
 
-Install them using the requirements file:
+Install them using the requirements file, but first create a new conda environment:
+
+
+```bash
+conda create --name usa_guns
+```
 
 ```bash
 pip install -r requirements.txt
