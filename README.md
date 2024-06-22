@@ -50,6 +50,8 @@ python main.py
 
 ![Figure](doc/data_by_year.png)
 
+![Figure](doc/long_gun_perc_example.png)
+
 
 ## Testing
 To run the test, run the following command in the root directory
