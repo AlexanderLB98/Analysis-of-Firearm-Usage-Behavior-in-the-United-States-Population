@@ -2,12 +2,13 @@ import pandas as pd
 
 
 
-def erase_month(df: pd.DataFrame) -> pd.DataFrame:
+def erase_month(df: pd.DataFrame, test_mode: bool = False) -> pd.DataFrame:
     """
     Removes the 'month' column from the given DataFrame and prints the first five rows and column names.
     
     Args:
         df (pd.DataFrame): The DataFrame containing the 'month' column to be removed.
+        test_mode (bool): If True, suppresses print statements. Default is False.
 
     Returns:
         pd.DataFrame: The DataFrame without the 'month' column.
@@ -17,23 +18,28 @@ def erase_month(df: pd.DataFrame) -> pd.DataFrame:
     """
 
     if "month" in df.columns:
-        print("Deleting month column")
+        if not test_mode:
+            print("Deleting month column")
         df.drop(columns=["month"],inplace=True)
     else:
-        print("No columne called month")
+        if not test_mode:
+            print("No columne called month")
     
-    print(df.head(5))
-    print(df.columns)
+    
+    if not test_mode:
+        print(df.head(5))
+        print(df.columns)
     
     return df
 
-def breakdown_date(df: pd.DataFrame) -> pd.DataFrame:
+def breakdown_date(df: pd.DataFrame,test_mode: bool = False) -> pd.DataFrame:
     """
     Breaks down the 'month' column into 'year' and 'month' columns in the given DataFrame 
     and prints the first five rows.
 
     Args:
         df (pd.DataFrame): The DataFrame containing the 'month' column with date information as str.
+        test_mode (bool): If True, suppresses print statements. Default is False.
 
     Returns:
         pd.DataFrame: The DataFrame with the 'month' column split into 'year' and 'month' columns.
@@ -51,7 +57,8 @@ def breakdown_date(df: pd.DataFrame) -> pd.DataFrame:
     df['year'] = df['year'].astype(int)
     df['month'] = df['month'].astype(int)
     
-    print(df.head(5))
+    if not test_mode:
+        print(df.head(5))
     
     return df
 

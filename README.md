@@ -48,10 +48,17 @@ Once the environment is set up, just run the `main.py` script
 python main.py
 ```
 
-![Figure](doc/data_by_year.png)
+![Figure1](doc/data_by_year.png)
+*Figure 1: Yearly breakdown of data showcasing trends and patterns.*
 
-![Figure](doc/long_gun_perc_example.png)
+![Figure 2](doc/permit_perc_example.png)
+*Figure 2: Percentage of permits issued by state, visualized on a map.*
 
+![Figure 3](doc/hand_gun_perc_example.png)
+*Figure 3: Percentage of handgun purchases by state, visualized on a map.*
+
+![Figure 4](doc/long_gun_perc_example.png)
+*Figure 4: Percentage of long gun purchases by state, visualized on a map.*
 
 ## Testing
 To run the test, run the following command in the root directory
@@ -59,3 +66,38 @@ To run the test, run the following command in the root directory
 ```bash
 python -m unittest discover
 ```
+
+This will run al the unittests. if you want to run only one suite case, run
+
+```bash
+python tests/suitcase_test_dates.py 
+```
+from the CLI it will be asked for the test cases to be included in the test suite:
+```
+Select which suite you want to execute:
+0. All
+1. TestDates
+2. TestFormatDate
+Select: 
+```
+
+There are different test suites to test the different modules:
+- suitcase_test_dates
+- suitcase_test_common
+
+Nevertheless, all these test are combined in one CLI program: `main_test.py`. Running this file will launch an interactive terminal asking for the specific suitcases to be launched. You can run this program from the root folder by typing:
+
+```
+python tests/main_test.py 
+```
+
+This will ask for the specific suite to test:
+
+```
+"Select which suite(s) you want to execute:"
+"0. All suite cases"
+"1. Common suite Tests"
+"2. Date suite Tests"
+```
+
+If you type `0`, all the tests will be launched automatically. If `1` or `2` is selected, you will get to the previous test cases defined above.

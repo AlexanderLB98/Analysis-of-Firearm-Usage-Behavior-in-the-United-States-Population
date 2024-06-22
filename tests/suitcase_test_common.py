@@ -6,18 +6,22 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
-from test_dates import TestDates, TestFormatDate
+from test_common import TestCleanCSV, TestRenameCol
 
-def run_date_tests(ask=True):
+
+
+
+def run_common_tests(ask=True):
     
     if ask:
-        print("Select which suite you want to execute from date_tests:")
+        print("Select which suite you want to execute:")
         print("0. All")
-        print("1. TestDates")
-        print("2. TestFormatDate")
+        print("1. TestCleanCSV")
+        print("2. TestRenameCol")
         
         choice = input("Select: ")
         
+        #suite = unittest.TestSuite() # Deprecated
         loader = unittest.TestLoader()
         
         
@@ -25,15 +29,15 @@ def run_date_tests(ask=True):
             # Run all test cases
             suite = loader.loadTestsFromModule(sys.modules[__name__])
         elif choice == "1":
-            suite = loader.loadTestsFromTestCase(TestDates)
+            suite = loader.loadTestsFromTestCase(TestCleanCSV)
         elif choice == "2":
-            suite = loader.loadTestsFromTestCase(TestFormatDate)
-            
+            suite = loader.loadTestsFromTestCase(TestRenameCol)
+    
     else:
         loader = unittest.TestLoader()
         suite = loader.loadTestsFromModule(sys.modules[__name__])
-
+            
     unittest.TextTestRunner(verbosity=2).run(suite)
     
 if __name__ == '__main__':
-    run_date_tests()
+    run_common_tests()

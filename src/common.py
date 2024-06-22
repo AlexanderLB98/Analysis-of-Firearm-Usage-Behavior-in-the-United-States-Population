@@ -43,10 +43,19 @@ def clean_csv(df: pd.DataFrame) -> pd.DataFrame:
     """
     
     cols = ["month", "state", "permit", "handgun", "long_gun"]
-    df = df[cols]
-    print(df.columns)
+    df_clean = df[cols].copy()
     
-    return df
+    
+    
+    # Convert specific columns to int
+    df_clean["permit"] = pd.to_numeric(df_clean["permit"], errors='coerce').fillna(0).astype(int)
+    df_clean["handgun"] = pd.to_numeric(df_clean["handgun"], errors='coerce').fillna(0).astype(int)
+    df_clean["long_gun"] = pd.to_numeric(df_clean["long_gun"], errors='coerce').fillna(0).astype(int)
+    
+    
+    print(df_clean.columns)
+    
+    return df_clean
 
 
 def rename_col(df: pd.DataFrame) -> pd.DataFrame:
