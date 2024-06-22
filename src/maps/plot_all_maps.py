@@ -8,6 +8,15 @@ from PIL import Image
 
 
 def get_geojson() -> dict:
+    """
+    Fetches the GeoJSON data for US states from a remote URL.
+
+    Args:
+        No input
+    Returns:
+        dict: The GeoJSON data representing US states.
+    """
+    
     state_geo = requests.get(
     "https://raw.githubusercontent.com/python-visualization/folium-example-data/main/us_states.json"
     ).json()
@@ -15,16 +24,20 @@ def get_geojson() -> dict:
     
     return state_geo
 
-def merge_geojson_perc(state_json, data):
-#    state_json.merge
-    return 0   
-    
-
-    # Filtrar el GeoDataFrame para conservar solo los países que tienen datos en sum_volume
-    #gdf_filtered = gdf.merge(sum_volume, left_on='name', right_on='country', how='inner')
 
 def plot_map(state_geo, state_data):
-        
+    """
+    Plots one single map with multiple Choropleth layers for permit, handgun, and long gun data.
+
+    Args:
+        state_geo (dict): The GeoJSON data for US states.
+        state_data (pd.DataFrame): The DataFrame containing the state data with columns 
+                                   'code', 'permit_perc', 'handgun_perc', and 'longgun_perc'.
+
+    Returns:
+        None: The function saves the generated map as an HTML file in the output folder.
+    """
+    
     m = folium.Map(location=[48, -102], zoom_start=4)
 
     folium.Choropleth(
@@ -70,7 +83,19 @@ def plot_map(state_geo, state_data):
     print("Map saved in output/map.html. Open it in your favorite browser to check the results.")
 
 def plot_maps_to_image(state_geo, state_data):
+    """
+    Plots and saves individual maps for permit, handgun, and long gun data as images.
+
+    Args:
+        state_geo (dict): The GeoJSON data for US states.
+        state_data (pd.DataFrame): The DataFrame containing the state data with columns 
+                                   'code', 'permit_perc', 'handgun_perc', and 'longgun_perc'.
+
+    Returns:
+        None: The function saves the generated maps as PNG images in the output folder.
+    """
     
+        
     m1 = folium.Map(location=[48, -102], zoom_start=4)
 
     folium.Choropleth(
@@ -132,6 +157,16 @@ def plot_maps_to_image(state_geo, state_data):
     
 
 def main_maps(df: pd.DataFrame):
+    """
+    Main function to plot maps and save them as both HTML and PNG images.
+
+    Args:
+        df (pd.DataFrame): The DataFrame containing the state data.
+
+    Returns:
+        None: The function generates and saves maps.
+    """
+    
     
     state_geo = get_geojson()
 
