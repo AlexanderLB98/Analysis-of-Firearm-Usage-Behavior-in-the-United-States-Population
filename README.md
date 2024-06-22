@@ -95,9 +95,9 @@ This will ask for the specific suite to test:
 
 ```
 "Select which suite(s) you want to execute:"
-"0. All suite cases"
-"1. Common suite Tests"
-"2. Date suite Tests"
+0. All suite cases
+1. Common suite Tests
+2. Date suite Tests
 ```
 
 If you type `0`, all the tests will be launched automatically. If `1` or `2` is selected, you will get to the previous test cases defined above.
